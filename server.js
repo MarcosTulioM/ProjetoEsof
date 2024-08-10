@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
+const port = 3000;
 
 // Configurar o middleware
 app.use(bodyParser.json());
@@ -23,10 +24,10 @@ app.put('/editar', (req, res) => {
 
 // Rota para servir o index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname,'principal/index.html'));
 });
 
 // Iniciar o servidor
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Servidor rodando na porta 3000');
 });
